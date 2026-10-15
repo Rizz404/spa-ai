@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+set -e
+export PATH=/opt/plesk/node/24/bin:$PATH
+npm run build
+/opt/plesk/php/8.4/bin/php artisan migrate --force --no-interaction
+/opt/plesk/php/8.4/bin/php artisan optimize
