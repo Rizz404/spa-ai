@@ -2,6 +2,8 @@
 
 Spa multi-tenant dengan AI Spa Concierge, katalog treatment/paket, ruang perawatan, dan booking yang dikonfirmasi staf. Antarmuka Zen natural memakai sage, ivory, navigasi kiri, pemandu kanan, panel tengah, dan tiga bahasa (id/en/ja).
 
+Produksi: https://spa-ai.fts-tech.co.id/ · Sanctuary: https://spa-ai.fts-tech.co.id/spa-ai · Admin: https://spa-ai.fts-tech.co.id/admin. Dikelola Laravel Toolkit Plesk dari branch `main`, dengan PostgreSQL, HTTPS, dan inventori bergulir. Konten awal adalah demo; tinjau alamat, harga, dan kebijakan sebelum dipakai untuk bisnis nyata.
+
 ## Menjalankan lokal
 
 Prasyarat: PHP 8.4+, SQLite, Composer, Node >=22.12 (disarankan Node 24).
@@ -72,13 +74,13 @@ php artisan spa:open-inventory --spa=spa-ai
 php artisan schedule:list
 ```
 
-Health check: `/up`. Repository publik: https://github.com/Rizz404/spa-ai, branch `main`. Deployment Plesk memerlukan domain tujuan, kontak SSL, akun admin dan keputusan integrasi/konten produksi.
+Health check: `/up`. Repository publik: https://github.com/Rizz404/spa-ai, branch `main`. LLM dan TTS dikonfigurasi melalui environment privat server. Endpoint model LLM telah merespons 200 dan memuat model terpilih; chat dan audio nyata belum diuji. SMTP belum diaktifkan (`MAIL_MAILER=log`).
 
 ## Pemeriksaan
 
 `npm run build`, `npm run lint:ui`, `php artisan view:cache`, dan Pint digunakan untuk pemeriksaan statis/build. Browser QA mencakup desktop 1440×900 dan mobile 390×844, navigasi scene, bahasa, chat, pengiriman booking, login admin, konfirmasi dan pembatalan. Acuan Cafe AI dijalankan dari salinan terpisah; folder sumber tidak diubah.
 
-Tes otomatis belum dijalankan, mengikuti panduan. Fixture warisan telah disesuaikan tetapi belum dibuktikan dengan suite. Bila diminta: `php artisan test --compact` dan `npm run test:ui`. PostgreSQL produksi, LLM dan TTS nyata belum diverifikasi lokal.
+CI GitHub pada branch `main` telah lulus: 111 tes PHP (496 assertions), 16 tes JavaScript, Pint, UI conventions, build, Composer audit, dan npm audit runtime. CI membangun aset Vite sebelum tes halaman. Provider pada tes chat menggunakan HTTP fake; hasil tes tidak membuktikan jawaban LLM/TTS nyata.
 
 ## Aset dan prompt imagegen
 
