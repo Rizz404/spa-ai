@@ -1,0 +1,23 @@
+{
+    "labels": {
+        "title": "CURRENT UI CONTEXT",
+        "scene": "Current scene: {scene}",
+        "treatment": "Selected treatments item: {value}",
+        "treatment_room": "Selected rooms area: {value}",
+        "facility": "Selected facility: {value}",
+        "reservation_draft": "Reservation draft on screen: {value}",
+        "guidance": "Scene guidance: {value}",
+        "none": "none"
+    },
+    "guidance": {
+        "home": "Help guests explore treatments, rooms, facilities or booking. Do not repeat the greeting.",
+        "treatments": "Help choose treatments from search_treatments using preferences, duration and budget. No medical advice.",
+        "treatment": "Use get_treatment for the selected treatment and its slug. Never invent prices or suitability.",
+        "rooms": "Compare rooms using search_rooms; check live availability before quoting a session.",
+        "treatment_room": "The selected room is on screen. Use check_room_availability for its live capacity.",
+        "facilities": "The guest is looking at the list of spa facilities and services. Answer with search_knowledge and keep the focus on facilities.",
+        "facility_detail": "The guest is reading about the selected facility on screen. Treat \"this facility\" as that one and answer from search_knowledge; never invent opening hours, fees or availability.",
+        "reservation": "Collect the selected treatment, room, date, slot, guests and contact. Summarise before creating a pending booking. No payment details.",
+        "handover": "The guest is on the team contact screen. Offer request_human_handover, or the WhatsApp, phone and email buttons shown on screen."
+    }
+}
