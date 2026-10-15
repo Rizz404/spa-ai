@@ -47,23 +47,23 @@ jobs:
           cp .env.example .env
           php artisan key:generate --ansi
 
+      - name: Install Node dependencies
+        run: npm ci
+
+      - name: Build
+        run: npm run build
+
       - name: PHPUnit
         run: composer test
 
       - name: Pint
         run: php vendor/bin/pint --test
 
-      - name: Install Node dependencies
-        run: npm ci
-
       - name: UI conventions
         run: npm run lint:ui
 
       - name: Node tests
         run: npm run test:ui
-
-      - name: Build
-        run: npm run build
 
       - name: Composer audit
         run: composer audit

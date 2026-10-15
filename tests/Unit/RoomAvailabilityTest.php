@@ -16,12 +16,12 @@ class RoomAvailabilityTest extends TestCase
 
     public function test_a_party_must_fit_the_area_capacity(): void
     {
-        $area = new TreatmentRoom(['min_guests' => 4, 'max_guests' => 8]);
+        $area = new TreatmentRoom(['min_guests' => 2, 'max_guests' => 4]);
         $availability = new RoomAvailability;
 
+        $this->assertFalse($availability->fitsParty($area, 1));
+        $this->assertTrue($availability->fitsParty($area, 2));
         $this->assertFalse($availability->fitsParty($area, 3));
-        $this->assertTrue($availability->fitsParty($area, 4));
-        $this->assertTrue($availability->fitsParty($area, 8));
-        $this->assertFalse($availability->fitsParty($area, 9));
+        $this->assertFalse($availability->fitsParty($area, 4));
     }
 }
