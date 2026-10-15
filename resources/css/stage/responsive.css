@@ -1,0 +1,175 @@
+.stage-panels,[data-chat-widget],.stage-chat { display: contents; }
+.stage-content,.stage:has(.stage-chat.is-open) .stage-content {
+    left: calc(var(--rail) + 30px); right: auto; top: var(--header); bottom: 28px;
+    width: calc(100% - var(--rail) - 330px); max-width: 1000px; padding: 30px;
+    background: color-mix(in srgb,var(--paper) 97%,transparent); border: 1px solid var(--line);
+    border-radius: 12px; box-shadow: var(--shadow-card); container-type: inline-size;
+}
+.stage-content h1 { font: 400 clamp(30px,3.2vw,42px)/1.15 var(--font-display); margin-top: 10px; letter-spacing: -.025em; }
+.stage-content h2 { font-weight: 400; }
+.stage-content .narrator { margin: 20px 0 24px; padding: 14px; border-radius: 8px; }
+.narrator-avatar { background-position: var(--concierge-focus); background-size: var(--concierge-zoom); width: 42px; height: 42px; }
+.narrator-text { font-size: 12px; }
+.narrator-name { font-size: 10px; }
+.narrator-actions button { font-size: 10px; }
+.stage-content .narrator-inline { border-left: 2px solid var(--line-strong); border-top: 0; border-right: 0; border-bottom: 0; }
+.stage-content .narrator-inline .narrator-avatar { display: none; }
+.collection-grid { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 20px; }
+.ritual-card { position: relative; display: block; border: 1px solid var(--line); border-radius: 10px; overflow: hidden; transition: border-color .2s,transform .2s; background: var(--paper); }
+.ritual-card:hover { border-color: var(--terra); transform: translateY(-3px); }
+.ritual-card-art { position: relative; height: 160px; overflow: hidden; background: var(--paper-deep); }
+.ritual-card-art img { height: 100%; width: 100%; object-fit: cover; transition: transform .5s; }
+.ritual-card:hover img { transform: scale(1.035); }
+.ritual-card:nth-child(2n) img { object-position: 75% center; }
+.ritual-card-number { position: absolute; top: 10px; left: 10px; background: var(--paper); width: 25px; height: 25px; display: grid; place-items: center; border-radius: 50%; font-size: 9px; }
+.ritual-card-body { position: relative; padding: 18px; }
+.stage-content .ritual-card h2 { font: 400 22px/1.2 var(--font-display); margin-top: 7px; padding-right: 8px; }
+.ritual-card-detail { margin-top: 12px; font-size: 10px; color: var(--ink-soft); }
+.ritual-card-detail span { margin-inline: 6px; }
+.ritual-card-arrow { position: absolute; top: 18px; right: 15px; color: var(--terra); }
+.ritual-card-body > .stage-eyebrow { font-size: 8px; }
+.stage-action { border-radius: 8px; font-size: 12px; padding: 14px 22px; }
+.detail-scene-step,.wizard-secondary { border-radius: 7px; }
+.detail-photo { border-radius: 10px; }
+.detail-price { font-weight: 400; }
+.chat-launcher { left: auto; right: 30px; bottom: 28px; width: 250px; height: 52px; border-radius: 9px; border-color: var(--terra); background: var(--terra); color: var(--paper); z-index: 15; font-size: 12px; }
+.chat-launcher-dot { background: var(--paper-deep); }
+.chat-host-avatar { background-position: var(--concierge-focus); background-size: var(--concierge-zoom); }
+.chat-log { z-index: 21; left: calc(var(--rail) + (100% - var(--rail) - var(--drawer))/2); right: auto; width: var(--drawer); top: 104px; bottom: 78px; border: 1px solid var(--line-strong); border-radius: 12px; transform: translateY(15px); }
+.chat-bar { z-index: 23; left: calc(var(--rail) + (100% - var(--rail) - var(--drawer))/2 + 14px); right: auto; width: calc(var(--drawer) - 28px); bottom: 92px; border-radius: 8px; }
+.chat-draft-dialog { z-index: 25; left: calc(var(--rail) + (100% - var(--rail) - var(--drawer))/2 + 14px); right: auto; bottom: 158px; width: calc(var(--drawer) - 28px); }
+.stage:has(.stage-chat.is-expanded) { --drawer: min(960px, calc(100vw - 300px)); }
+.stage:has(.stage-chat.is-open) .stage-content,.stage:has(.stage-chat.is-open) .stage-welcome { animation: none; opacity: .12; pointer-events: none; }
+.stage:has(.stage-chat.is-open) .stage-signature { opacity: 0; }
+.wizard-seats { grid-template-columns: 1fr; }
+.wizard-seat-body { border-radius: 8px; }
+.wizard input,.wizard textarea,.wizard select { border-radius: 7px; }
+.wizard-step { grid-template-columns: repeat(2,minmax(0,1fr)); }
+.wizard-step-wide { grid-template-columns: 1fr; }
+@media(min-width:1600px) { .stage-content,.stage:has(.stage-chat.is-open) .stage-content { width: calc(100% - var(--rail) - 410px); } .stage-character { right: 1%; } }
+@media(max-width:1180px) {
+    .stage { --rail: 184px; }
+    .stage-brand { gap: 7px; }
+    .stage-brand strong { font-size: 20px; }
+    .stage-brand small { font-size: 6px; }
+    .stage-rail { padding-inline: 14px; }
+    .stage-navigation a,.rail-home { gap: 9px; font-size: 10px; padding-inline: 10px; }
+    .stage-welcome { left: calc(var(--rail) + 32px); width: 48%; }
+    .stage-content,.stage:has(.stage-chat.is-open) .stage-content { left: calc(var(--rail) + 22px); width: calc(100% - var(--rail) - 240px); padding: 24px; }
+    .stage-signature { width: 180px; right: 22px; }
+    .chat-launcher { width: 190px; right: 22px; }
+    .collection-grid { gap: 14px; }
+    .ritual-card-art { height: 130px; }
+    .stage-content .ritual-card h2 { font-size: 19px; }
+}
+@media(max-width:899px) {
+    .stage { --rail: 70px; --header: 88px; --drawer: calc(100vw - 110px); }
+    .stage-rail { top: 92px; bottom: 20px; left: 12px; width: 54px; padding: 6px; border: 1px solid var(--line); border-radius: 10px; background: color-mix(in srgb,var(--paper) 96%,transparent); }
+    .stage-rail > .stage-eyebrow,.stage-navigation a > span:not(.nav-icon),.rail-home > span:not(.nav-icon),.rail-foot { display: none; }
+    .stage-navigation { gap: 8px; }
+    .stage-navigation a,.rail-home { justify-content: center; padding: 9px; min-height: 44px; }
+    .rail-home { margin-bottom: 8px; }
+    .stage-header { height: 80px; padding-inline: 18px; }
+    .stage-brand { max-width: 190px; gap: 8px; }
+    .stage-brand strong { font-size: 21px; }
+    .stage-brand small { font-size: 6px; }
+    .spa-monogram { width: 36px; height: 40px; font-size: 24px; }
+    .stage-tools { gap: 6px; }
+    .stage-lang a { min-width: 28px; min-height: 30px; font-size: 10px; }
+    .sound-toggle { width: 36px; height: 40px; }
+    .stage-shade { background: linear-gradient(90deg,color-mix(in srgb,var(--paper) 97%,transparent),color-mix(in srgb,var(--paper) 75%,transparent) 60%,color-mix(in srgb,var(--paper) 30%,transparent)); }
+    .stage-character { height: 59%; max-width: 52%; right: -20px; }
+    .stage:not([data-scene="home"]) .stage-character { opacity: .3; right: -30px; }
+    .stage-welcome { left: 94px; top: 21%; width: 56%; }
+    .stage-welcome h1 { font-size: 48px; }
+    .welcome-facts { margin-top: 32px; gap: 22px; }
+    .stage-content,.stage:has(.stage-chat.is-open) .stage-content { left: 84px; top: 92px; bottom: 88px; width: calc(100% - 102px); padding: 24px; }
+    .stage-signature { display: none; }
+    .stage-edition { left: 94px; font-size: 8px; bottom: 28px; }
+    .chat-launcher { width: 210px; right: 18px; bottom: 20px; }
+    .chat-log { left: 84px; top: 92px; bottom: 20px; width: calc(100% - 102px); }
+    .chat-bar { left: 98px; width: calc(100% - 130px); bottom: 34px; }
+    .chat-draft-dialog { left: 98px; width: calc(100% - 130px); bottom: 104px; }
+    .chat-log-expand { display: none; }
+    .stage-tour { bottom: 90px; font-size: 17px; }
+    .opening-panel { left: 7%; width: 56%; }
+    .opening-panel h1 { font-size: 58px; }
+    .opening-page .stage-character { right: -9%; max-width: 58%; height: 63%; }
+    .opening-enter,.opening-note { left: 7%; }
+}
+@media(max-width:599px) {
+    .stage { --gutter: 14px; }
+    .stage-header { padding-inline: 14px; }
+    .stage-brand small { max-width: 90px; font-size: 5.5px; }
+    .stage-tools { gap: 4px; }
+    .stage-brand strong { font-size: 19px; }
+    .spa-monogram { width: 30px; height: 35px; font-size: 22px; }
+    .sound-toggle { width: 30px; height: 36px; }
+    .sound-toggle svg { width: 16px; }
+    .stage-lang { gap: 0; padding: 3px; }
+    .stage-lang a { min-width: 24px; min-height: 28px; font-size: 9px; }
+    .stage-rail { top: 92px; left: 10px; bottom: 18px; }
+    .stage-welcome { top: 132px; left: 82px; width: calc(100% - 98px); }
+    .stage-welcome h1 { font-size: clamp(32px,9.4vw,43px); margin-top: 18px; letter-spacing: -.04em; }
+    .stage-welcome > .stage-eyebrow { font-size: 8px; letter-spacing: .13em; }
+    .stage-welcome > p:not(.stage-eyebrow) { font-size: 12px; margin-top: 20px; max-width: 265px; line-height: 1.8; }
+    .welcome-actions { margin-top: 23px; gap: 10px 18px; }
+    .welcome-actions .stage-action { padding: 13px 17px; font-size: 10px; }
+    .welcome-link { font-size: 10px; }
+    .welcome-facts,.stage-edition { display: none; }
+    .stage-character { height: 35%; max-width: 80%; right: -12px; bottom: 0; }
+    .stage:not([data-scene="home"]) .stage-character { height: 27%; opacity: .2; }
+    .chat-launcher { left: 82px; right: 14px; bottom: 18px; width: calc(100% - 96px); height: 47px; font-size: 11px; }
+    .stage-content,.stage:has(.stage-chat.is-open) .stage-content { left: 76px; width: calc(100% - 88px); top: 92px; bottom: 80px; padding: 18px 15px; border-radius: 9px; }
+    .stage-content h1,.stage-content h2,.stage-panel-right h2 { font-size: 28px; }
+    .stage-content .narrator { padding: 10px; margin: 16px 0 20px; gap: 7px; }
+    .narrator-text { font-size: 11px; min-height: 3em; line-height: 1.7; }
+    .narrator-wave { display: none; }
+    .collection-grid,.facility-grid { grid-template-columns: 1fr; gap: 15px; }
+    .ritual-card-art { height: 150px; }
+    .ritual-card-body { padding: 14px; }
+    .stage-content .ritual-card h2 { font-size: 23px; }
+    .ritual-card-detail { font-size: 10px; }
+    .panel-close { width: 30px; height: 30px; margin-right: -4px; }
+    .stage-content .detail-scene > div:first-child { gap: 8px; }
+    .detail-scene-step { padding: 9px 12px; font-size: 10px; }
+    .stage-action { padding: 12px 15px; font-size: 11px; }
+    .stage-content .text-sm { font-size: 12px; }
+    .detail-price { font-size: 30px; }
+    .detail-scene-facts { gap: 12px; }
+    .detail-scene-facts dd { font-size: 12px; }
+    .chat-log { left: 76px; width: calc(100% - 88px); top: 92px; bottom: 18px; }
+    .chat-log-header { gap: 7px; padding: 12px 8px; }
+    .chat-log-header .chat-host-avatar { width: 27px; height: 27px; flex-shrink: 0; }
+    .chat-log-header .font-semibold { font-size: 10px; }
+    .chat-log-header .text-xs { font-size: 8px; }
+    .chat-log-new { font-size: 8px; padding: 5px; }
+    .chat-log-close { width: 25px; height: 30px; }
+    .chat-log-messages { padding: 12px; font-size: 11px; }
+    .chat-log-messages .text-sm { font-size: 11px; }
+    .chat-bar { left: 84px; bottom: 26px; width: calc(100% - 104px); padding: 5px; min-height: 48px; gap: 4px; }
+    .chat-bar input { font-size: 11px; padding: 7px 5px; }
+    .chat-bar button { min-height: 36px; font-size: 10px; padding: 6px 9px; }
+    .chat-bar .chat-mic { width: 30px; }
+    .chat-draft-dialog { left: 84px; width: calc(100% - 104px); bottom: 88px; }
+    .wizard-step { grid-template-columns: 1fr; gap: 16px; }
+    .wizard-progress li span { display: none; }
+    .wizard-slots { grid-template-columns: repeat(2,minmax(0,1fr)); }
+    .wizard-slots label span { padding: 9px 5px; font-size: 10px; }
+    .wizard-field input,.wizard-field select,.wizard-field textarea { font-size: 13px; }
+    .wizard-summary dd { flex-wrap: wrap; gap: 5px; }
+    .wizard-actions { gap: 8px; flex-wrap: wrap; }
+    .wizard-total { font-size: 12px; flex-wrap: wrap; gap: 8px; }
+    .opening-panel { top: 140px; left: 26px; width: calc(100% - 52px); }
+    .opening-panel h1 { font-size: 48px; max-width: 300px; }
+    .opening-tagline { max-width: 260px; font-size: 12px; line-height: 1.9; margin-top: 22px; }
+    .opening-links { gap: 8px 18px; max-width: 260px; margin-top: 20px; }
+    .opening-links li { font-size: 10px; }
+    .opening-enter { left: 26px; bottom: 52px; max-width: calc(100% - 52px); }
+    .opening-button { font-size: 11px; padding: 15px 20px; gap: 25px; }
+    .opening-page .stage-character { height: 35%; max-width: 80%; right: -25px; }
+    .opening-page .stage-shade { background: linear-gradient(180deg,var(--paper),color-mix(in srgb,var(--paper) 90%,transparent) 55%,color-mix(in srgb,var(--paper) 20%,transparent)); }
+    .opening-note { left: 26px; font-size: 7px; bottom: 22px; }
+}
+@media(max-height:700px) and (min-width:900px) { .stage-rail { padding-top: 115px; } .stage-navigation a,.rail-home { min-height: 44px; } .stage-welcome { top: 20%; } .stage-welcome h1 { font-size: 48px; } .welcome-facts { margin-top: 25px; } }
+@media(max-height:740px) and (max-width:599px) { .stage-welcome { top: 106px; } .stage-welcome h1 { font-size: 32px; } .stage-welcome > p:not(.stage-eyebrow) { font-size: 11px; margin-top: 16px; } .welcome-actions { margin-top: 16px; } .stage-character { height: 30%; } .opening-panel { top: 106px; } .opening-panel h1 { font-size: 40px; } }

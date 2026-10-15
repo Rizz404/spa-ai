@@ -1,0 +1,10 @@
+.stage-welcome { position: absolute; z-index: 3; top: 24%; left: calc(var(--rail) + 48px); width: min(570px,44vw); }
+.stage-welcome h1 { margin-top: 18px; font: 400 clamp(44px,4.4vw,72px)/1.12 var(--font-display); letter-spacing: -.045em; }
+.stage-welcome h1 em { color: var(--terra); font-weight: 400; }
+.stage-welcome > p:not(.stage-eyebrow) { margin-top: 24px; width: min(410px,100%); font-size: 14px; line-height: 1.9; color: var(--ink-soft); }
+.welcome-actions { display: flex; align-items: center; gap: 22px; flex-wrap: wrap; margin-top: 30px; }
+.welcome-link { font-size: 12px; font-weight: 500; padding-block: 10px; border-bottom: 1px solid var(--line-strong); }
+.welcome-link span { margin-left: 8px; }
+.welcome-facts { display: flex; gap: 38px; margin-top: 50px; padding-top: 23px; border-top: 1px solid var(--line-strong); width: min(460px,100%); }
+.welcome-facts span { font-size: 9px; text-transform: uppercase; letter-spacing: .12em; color: var(--ink-faint); }
+.welcome-facts strong { display: block; margin-top: 9px; font-size: 11px; font-weight: 500; letter-spacing: .025em; text-transform: none; color: var(--ink); }

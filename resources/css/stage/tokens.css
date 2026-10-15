@@ -1,0 +1,46 @@
+.stage-page {
+    --paper: #f9f8f0;
+    --paper-soft: #eef0e5;
+    --paper-deep: #dfe5d6;
+    --ink: #233c32;
+    --ink-soft: #52645a;
+    --ink-faint: #718075;
+    --line: #dce1d3;
+    --line-strong: #bcc9b7;
+    --terra: #48664d;
+    --terra-deep: #304d39;
+    --terra-soft: #e2e9db;
+    --leaf: #608564;
+    --sun: #c6ad72;
+    --alert: #9b473a;
+    --alert-soft: #faeee9;
+    --alert-line: #dfc2b7;
+    --radius-card: 18px;
+    --radius-control: 8px;
+    --shadow-card: 0 20px 65px -30px color-mix(in srgb, var(--ink) 40%, transparent);
+    --shadow-soft: 0 8px 30px -18px color-mix(in srgb, var(--ink) 35%, transparent);
+    --concierge-focus: 50% 3%;
+    --concierge-zoom: 220%;
+    height: 100dvh;
+    overflow: hidden;
+    background: var(--paper-deep);
+    color: var(--ink);
+    font-variant-emoji: text;
+}
+.stage {
+    --ease-cine: cubic-bezier(.22,.8,.24,1);
+    --header: 100px;
+    --gutter: 30px;
+    --rail: 218px;
+    --drawer: min(740px, calc(100vw - 300px));
+    --panel-bottom: 28px;
+    --chat-composer-height: 56px;
+    position: relative;
+    height: 100dvh;
+    overflow: hidden;
+    isolation: isolate;
+}
+.stage :focus-visible, .stage-page :focus-visible { outline: 2px solid var(--terra); outline-offset: 4px; }
+.stage button:disabled { opacity: .5; cursor: wait; }
+.stage-eyebrow { font-size: 10px; line-height: 1.6; font-weight: 600; letter-spacing: .18em; text-transform: uppercase; color: var(--terra-deep); }
+.stage-noscript { position: absolute; z-index: 30; inset: auto 12px 12px; padding: 18px; background: var(--paper); }

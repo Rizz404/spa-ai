@@ -1,0 +1,13 @@
+.stage-rail { position: absolute; z-index: 8; top: 0; left: 0; bottom: 0; width: var(--rail); padding: 144px 20px 28px; border-right: 1px solid var(--line); background: color-mix(in srgb,var(--paper) 96%,transparent); display: flex; flex-direction: column; }
+.stage-rail > .stage-eyebrow { margin: 0 12px 26px; font-size: 8px; }
+.stage-navigation { display: flex; flex-direction: column; gap: 8px; }
+.stage-navigation a,.rail-home { display: flex; align-items: center; gap: 12px; min-height: 54px; padding: 11px 12px; border-radius: 8px; font-size: 12px; color: var(--ink-soft); transition: background .2s,color .2s; }
+.rail-home { margin-bottom: 8px; }
+.stage-navigation a:hover,.stage-navigation a[aria-current],.rail-home:hover,.rail-home[aria-current] { background: var(--terra-soft); color: var(--terra-deep); }
+.stage-navigation a[aria-current],.rail-home[aria-current] { box-shadow: inset 2px 0 var(--terra); font-weight: 600; }
+.nav-icon { display: grid; place-items: center; flex-shrink: 0; }
+.nav-icon svg { width: 20px; height: 20px; }
+.nav-arrow { margin-left: auto; opacity: 0; }
+.stage-navigation a:hover .nav-arrow,.stage-navigation a[aria-current] .nav-arrow { opacity: 1; }
+.rail-foot { margin-top: auto; padding: 24px 10px 0; border-top: 1px solid var(--line); font-size: 9px; line-height: 1.7; color: var(--ink-soft); }
+.rail-status { display: inline-block; width: 5px; height: 5px; border-radius: 50%; background: var(--leaf); margin-right: 7px; }
