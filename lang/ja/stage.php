@@ -156,7 +156,7 @@ return [
         'hours' => '営業時間',
         'location' => 'スパの場所',
         'staff_intro' => '特別なご希望やご予約の確認は、スタッフにご相談ください。',
-        'empty' => '詳しくはAIバリスタにお尋ねください。',
+        'empty' => '詳しくはAI Spa Conciergeにお尋ねください。',
         'connection_error' => 'チャットに接続できませんでした。再読み込みしてください。',
         'treatments_empty' => 'トリートメント情報を準備中です。スタッフにお問い合わせください。',
         'rooms_empty' => 'お部屋の情報を準備中です。',
